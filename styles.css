@@ -27,7 +27,7 @@ h1 {
 body {
     background-color: #111;
     color: rgb(235, 235, 235);
-    transition: all;
+    transition: .25s all;
 }
 
 body.switch {
@@ -64,7 +64,7 @@ header {
 #banner.switch {
     background-image: url(images/inLight.svg);
     color: rgb(235, 235, 235);
-    transition: all;
+    transition: .25s all;
 }
 
 main {
