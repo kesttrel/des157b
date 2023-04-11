@@ -2,8 +2,30 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+}
+h1 {
+    font-family: "jeanne-moderno-geometrique", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 3em;
+}
+#item1 {
+    font-size: 100px;
+}
+#item2 {
+    line-height: .2em;
+}
+#title {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
-    background-color: #333;
+    background-color: #111;
     color: rgb(235, 235, 235);
     transition: all 2s;
 }
@@ -16,15 +38,14 @@ body.switch {
 #container {
     position: relative;
     width: 100%;
-    max-width: 1366px;
+    max-width: 1100px;
     /* make sure the columns don't get too small and text stays readable */
     min-width: 900px;
     margin: 1em auto;
-    padding-top: 2em;
 }
 
 header {
-    margin: 0 auto 2em auto;
+    margin: 0 auto .85em auto;
 }
 
 #banner {
@@ -33,15 +54,14 @@ header {
     width: 1100px;
     height: 250px;
     margin: auto;
-    background-color: rgb(235, 235, 235);
-    color: #333;
+    background-image: url(images/inDark.svg);
     overflow: hidden;
     display: grid;
 	place-items: center;
 }
 
 #banner.switch {
-    background-color: #333;
+    background-image: url(images/inLight.svg);
     color: rgb(235, 235, 235);
     transition: all 2s;
 }
@@ -49,14 +69,16 @@ header {
 main {
     display: flex;
     justify-content: space-evenly;
-    margin: 1em auto;
+    gap: 15px;
+    margin: auto;
 }
 
 main section {
     width: 25%;
-    border: 1px rgb(235, 235, 235) dashed;
-    margin: 0 .25em;
-    padding: 1em;
+    background-color: black;
+}
+main section.switch {
+    background-color: #F4F4F4;
 }
 
 a {
@@ -70,19 +92,22 @@ ul {
     padding-left: 0;
 }
 
-section li {
-    padding-left: 1.2em;
+section li, h3 {
+    padding-left: 1em;
+    font-family: "fenwick", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 section a {
     line-height: 1.1em;
     display: inline-block;
-    padding: .5em;
-    color: orange;
+    padding: .35em;
+    color: white;
 }
 
 section a:hover {
-    background-color: orange;
+    background-color: #00F8FF;
     color: #333;
 }
 
@@ -97,21 +122,24 @@ section.switch a:hover {
 
 button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 88px;
+    right: 0;
     padding: 12px;
-    background-color: orange;
-    color: #333;
+    background-color: #0000FF;
+    color: white;
     border: 1px solid transparent;
+    font-family: "fenwick", sans-serif;
+    transition: .5s ease-in-out;
 }
 
 button:hover {
-    background-color: coral;
+    background-color: #00F8FF;
     cursor: pointer;
 }
 
 button.switch {
     background-color: rgb(235, 235, 235);
+    color: #333;
     border-color: #333;
 }
 
