@@ -33,6 +33,7 @@ body {
 body.switch {
     background-color: rgb(235, 235, 235);
     color: black;
+    transition: .25s all;
 }
 
 #container {
@@ -59,6 +60,7 @@ header {
     overflow: hidden;
     display: grid;
 	place-items: center;
+    transition: .25s all;
 }
 
 #banner.switch {
@@ -77,9 +79,11 @@ main {
 main section {
     width: 25%;
     background-color: black;
+    transition: .25s all;
 }
 main section.switch {
     background-color: white;
+    transition: .25s all;
 }
 
 a {
@@ -105,19 +109,21 @@ section a {
     display: inline-block;
     padding: .35em;
     color: white;
+    transition: .25s all;
 }
 
 section a:hover {
     background-color: #00F8FF;
-    color: #333;
+    color: black;
 }
 
 section.switch a {
-    color: #333;
+    color: black;
+    transition: .25s all;
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: black;
     color: rgb(235, 235, 235);
 }
 
