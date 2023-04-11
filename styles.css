@@ -17,7 +17,7 @@ h1 {
     font-size: 100px;
 }
 #item2 {
-    line-height: .2em;
+    line-height: .1em;
 }
 #title {
     display: flex;
@@ -27,12 +27,12 @@ h1 {
 body {
     background-color: #111;
     color: rgb(235, 235, 235);
-    transition: all 2s;
+    transition: all;
 }
 
 body.switch {
     background-color: rgb(235, 235, 235);
-    color: #333;
+    color: black;
 }
 
 #container {
@@ -54,6 +54,7 @@ header {
     width: 1100px;
     height: 250px;
     margin: auto;
+    margin-top: 10px;
     background-image: url(images/inDark.svg);
     overflow: hidden;
     display: grid;
@@ -63,7 +64,7 @@ header {
 #banner.switch {
     background-image: url(images/inLight.svg);
     color: rgb(235, 235, 235);
-    transition: all 2s;
+    transition: all;
 }
 
 main {
@@ -78,7 +79,7 @@ main section {
     background-color: black;
 }
 main section.switch {
-    background-color: #F4F4F4;
+    background-color: white;
 }
 
 a {
@@ -138,12 +139,11 @@ button:hover {
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
-    color: #333;
-    border-color: #333;
+    background-color: #C12746;
+    color: white;
 }
 
 button.switch:hover {
-    background-color: #333;
+    background-color: #FBB03B;
     color: rgb(235, 235, 235)
 }
