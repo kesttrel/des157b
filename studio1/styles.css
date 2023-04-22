@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: rgba(14, 14, 136, 0.373);
+    transition: 1s ease;
+}
+
+#myVideo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+video:first-child {
+    filter: saturate(120%);
+    /* invert(100%) */
+}
+
+#poem p {
+    position: absolute;
+    width: 100%;
+    font-size: 1.5em;
+    transition: all .5s;
+}
+
+#line1,
+#line2,
+#line3,
+#line4 {
+    top: 85%;
+    left: 10%;
+}
+
+.showing {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#toggle-position {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: #ffffff54;
+    box-shadow: inset 0 0 10px #000000b8;
+    border-radius: 40px;
+    transition: 1s ease-in-out;
+}
+
+.slider:hover {
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 10px #00000045;
+    transition: 0.2s ease;
+}
+
+.toggle input:checked+.slider {
+    background-color: #212121;
+    box-shadow: inset 0 0 10px #000;
+}
+/* 
+input:checked+.slider:before {
+    background-color: #000000b8;
+} */
+
+.toggle input:checked+.slider::before {
+    transform: translateX(40px);
+}
+
+
+@media screen and (min-width: 600px) {
+    #poem p {
+        font-size: 3em;
+    }
+
+    #line1,
+    #line2,
+    #line3,
+    #line4 {
+        top: 80%;
+        left: 10%;
+    }
+}
