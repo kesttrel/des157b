@@ -12,6 +12,30 @@ body {
     transition: 1s ease;
 }
 
+.fa-frog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+    color: green;
+    transform: translate(-50%, -50%);
+    animation: bird 2s infinite alternate ease-in-out;
+}
+
+@keyframes bird {
+    0% {
+        opacity: .5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
 #myVideo {
     position: fixed;
     left: 0;
