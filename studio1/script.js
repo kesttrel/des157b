@@ -10,9 +10,9 @@
     const line4 = document.querySelector('#line4');
 
     const poem = {
-        start: [0, 5, 10, 15],
-        stop: [4, 9, 13, 17],
-        line: [line1, line2, line3, line4]
+        start: [0, 4, 9, 16, 17],
+        stop: [3, 8, 14, 19, 19],
+        line: [line1, line2, line3, line4, line5]
     }
 
     const loading = document.querySelector('.fa-frog');
@@ -25,7 +25,7 @@
 
     function checkTime() {
         for (let i = 0; i < poem.start.length; i++) {
-            if (poem.start[i] < myVideo.currentTime && myVideo.currentTime < poem.stop[i]) {
+            if (poem.start[i] < myVideo.currentTime && myVideo. currentTime < poem.stop[i]) {
                 poem.line[i].className = 'showing'
             } else {
                 poem.line[i].className = 'hidden'
@@ -34,14 +34,17 @@
     }
 
     const myInput = document.querySelector('#myInput');
+     
 
     myInput.addEventListener('change', function () {
         if (myInput.checked) {
             overlay.className = 'showing';
             overlay.className.remove('hidden');
+
         } else {
             overlay.className = 'hidden';
             overlay.className.remove('showing');
+            poem.style.color = 'white';
         }
     })
 })();
