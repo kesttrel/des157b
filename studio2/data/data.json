@@ -1,0 +1,50 @@
+{
+    "point1" : {
+        "time" : "8:00",
+        "name" : "Stinky"
+    },
+    "point2" : {
+        "time" : "8:15",
+        "name" : "Stinky Muffin"
+    },
+    "point3" : {
+        "time" : "8:20",
+        "name" : "Woozy"
+    },
+    "point4" : {
+        "time" : "8:45",
+        "name" : "Misses Boots"
+    },
+    "point5" : {
+        "time" : "9:00",
+        "name" : "Muff Stuff"
+    },
+    "point6" : {
+        "time" : "9:20",
+        "name" : "Worzy"
+    },
+    "point7" : {
+        "time" : "9:30",
+        "name" : "Muffin"
+    },
+    "point8" : {
+        "time" : "10:45",
+        "name" : "Stinky Muffin Head"
+    },
+    "point9" : {
+        "time" : "11:00",
+        "name" : "Silly"
+    },
+    "point10" : {
+        "time" : "11:15",
+        "name" : "Boots"
+    },
+    "point11" : {
+        "time" : "11:35",
+        "name" : "Boots Toots"
+    },
+    "point12" : {
+        "time" : "11:45",
+        "name" : "Bootsless Toots"
+    }
+}
