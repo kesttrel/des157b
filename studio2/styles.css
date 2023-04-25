@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Shadows Into Light', cursive;
+}
+img {
+    width: auto;
+    height: 100%;
+}
+main {
+    display: grid;
+    grid-template-columns: 1;
+}
+#woozy {
+    place-self: center;
+    height: 100vh;
+}
+#name-tag {
+    position: absolute;
+    bottom: 200px;
+    height: 31vh;
+}
+.name-tag {
+    place-self: center;
+    display: flex;
+    justify-content: center;
+}
+#data {
+    place-self: center;
+    position: absolute;
+    bottom: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+#name {
+    font-size: 36px;
+}
+#time {
+    font-size: 16px;
+}
