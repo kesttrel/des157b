@@ -1,44 +1,73 @@
 * {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Shadows Into Light', cursive;
 }
+
 img {
     width: auto;
     height: 100%;
 }
+
+body {
+    position: relative;
+}
+
 main {
     display: grid;
     grid-template-columns: 1;
 }
+
+aside {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#result {
+    background-color: aqua;
+    height: 100%;
+    width: auto;
+}
+
 #woozy {
     place-self: center;
     height: 100vh;
+    padding: 20px 0;
 }
+
 #name-tag {
     position: absolute;
     bottom: 200px;
     height: 31vh;
 }
+
 .name-tag {
     place-self: center;
     display: flex;
     justify-content: center;
 }
+
 #data {
     place-self: center;
     position: absolute;
-    bottom: 240px;
+    bottom: 260px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
     align-items: center;
 }
+
 #name {
     font-size: 36px;
 }
+
 #time {
     font-size: 16px;
+}
+
+@media screen and (min-width: 600px) {
 }
