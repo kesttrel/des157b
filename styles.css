@@ -149,3 +149,19 @@ section.switch a:hover {
     height: auto;
     margin: auto;
 }
+
+.link {
+    display: block;
+    color: black;
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    width: 25%;
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.link:hover {
+    background-color: purple;
+    color: white;
+}
