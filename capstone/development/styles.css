@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #111;
+    color: rgb(235, 235, 235);
+    transition: all 2s;
+    font-family: 'Ysabeau', sans-serif;
+}
+.posts {
+    padding: 50px 0;
+    max-width: 600px;
+    margin: auto;
+}
+.posts img {
+    display: block;
+    width: 600px;
+    height: auto;
+    margin: auto;
+}
