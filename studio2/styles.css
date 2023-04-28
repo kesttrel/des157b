@@ -37,33 +37,32 @@ aside {
     padding: 20px 0;
 }
 
-#name-tag {
-    position: absolute;
-    bottom: 200px;
-    height: 31vh;
-}
-
 .name-tag {
     place-self: center;
     display: flex;
     justify-content: center;
+    position: relative;
+}
+#name-tag {
+    place-self: center;
+    position: absolute;
+    bottom: 25vh;
+    height: 31vh;
 }
 
 #data {
-    place-self: center;
     position: absolute;
-    bottom: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
+    bottom: 32vh;
 }
 
 #name {
-    font-size: 36px;
+    width: 100%;
+    font-size: 30px;
 }
 
 #time {
-    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
 }
