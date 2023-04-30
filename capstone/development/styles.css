@@ -12,9 +12,29 @@ body {
     max-width: 600px;
     margin: auto;
 }
+.posts h2 {
+    margin-top: 50px;
+}
 .posts img {
     display: block;
     width: 600px;
     height: auto;
     margin: auto;
+}
+.posts p {
+    margin-bottom: 25px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.link:hover {
+    color: white;
+    background-color: purple;
 }
