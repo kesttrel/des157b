@@ -90,12 +90,12 @@ button div {
     display: grid;
 	place-items: center;
     background-color: white;
+    transition: all .5s;
     background-image: url(images/dark.svg);
 }
 #banner.switch {
     background-color: #333;
     color: white;
-    transition: all .5s;
     background-image: url(images/light.jpg);
 }
 main {
@@ -138,9 +138,11 @@ section li {
 }
 section a {
     line-height: 1.1em;
+    border-radius: 10px;
     display: inline-block;
     padding: .5em;
     color: #ffffff;
+    transition:  ease .25s;
 }
 section a:hover {
     background-color: orange;
@@ -150,8 +152,7 @@ section.switch a {
     color: white;
 }
 section.switch a:hover {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+    background-color: #6db6be;
 }
 
 /* #toggle {
