@@ -9,21 +9,24 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    let age_then;
+    let age_then = null;
+    let age_today = 403;
     // Forest
     const marker1 = L.marker([40.857345, -124.053789]).addTo(map);
     marker1.bindPopup('<b>Woozy in the forest</b><br><p>12/26/22</p><br><img src="images/woozy-forest.jpg">');
     marker1.addEventListener('click', function () {
         age_then = 269;
         console.log(age_then);
+        updateChart();
     });
 
     // River
     const marker2 = L.marker([40.857345, -123.992684]).addTo(map);
-    marker2.bindPopup('<b>Woozy at the river</b><br><p>08/08/22</p><br><img src="images/woozy-river.jpg">');
+    marker2.bindPopup('<b>Woozy at the river</b><br><p>08/18/22</p><br><img src="images/woozy-river.jpg">');
     marker2.addEventListener('click', function () {
-        age_then = 129;
+        age_then = 139;
         console.log(age_then);
+        updateChart();
     });
 
     // Beach 
@@ -32,17 +35,26 @@
     marker3.addEventListener('click', function () {
         age_then = 127;
         console.log(age_then);
+        updateChart();
     });
 
     const myChart = document.getElementById('myChart');
-    new Chart(myChart, {
+    const chart = new Chart(myChart, {
         type: 'bar',
         data: {
             datasets: [{
                 label: 'age in days',
-                data: [403, age_then],
+                data: [age_today, age_then],
             }],
             labels: ['How old Woozy is today', 'How old Woozy was on this day'],
         }
     });
+
+    function updateChart() {
+        if (age_then === null) {
+            return;
+        }
+        chart.data.datasets[0].data[1] = age_then;
+        chart.update();
+    }
 })();
