@@ -19,7 +19,7 @@
 
     myVideo.addEventListener('playing', function () {
         loading.style.display = 'none';
-    })
+    });
 
     const intervalID = setInterval(checkTime, 1000);
 
