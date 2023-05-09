@@ -24,7 +24,7 @@
     const marker2 = L.marker([40.857345, -123.992684]).addTo(map);
     marker2.bindPopup('<b>Woozy at the river</b><br><p>08/18/22</p><br><img src="images/woozy-river.jpg">');
     marker2.addEventListener('click', function () {
-        age_then = 139;
+        age_then = 19;
         console.log(age_then);
         updateChart();
     });
