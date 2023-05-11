@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #d9dbe2;
+    color: white;
+}
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+header {
+    height: 150px;
+    width: 100vw;
+    background-color: white;
+    margin-bottom: 20px;
+}
+#newbtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    filter: drop-shadow(3px 3px 3px #a5b4c2);
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    overflow: hidden;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    filter: drop-shadow(3px 3px 6px #d0d0d7);
+    padding: 15px;
+    height: 380px;
+}
+
+/* Forms */
+
+#create-post {
+    background: rgb(255, 255, 255);
+    filter: drop-shadow(-3px 3px 6px red);
+    color: #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 34vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#create-post {
+    z-index: 50;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.fa-times-circle {
+    font-size: 24px;
+    
+    color: black;
+}
+
+.create-post-offscreen { top: 0; right: -39vw; transition: all 500ms cubic-bezier(0.600, 0.040, 0.980, 0.335); }
+.create-post-onscreen { top: 0; right: 0; transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);}
