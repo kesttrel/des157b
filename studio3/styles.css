@@ -48,7 +48,7 @@ ol {
 }
 
 li {
-    overflow: hidden;
+    overflow: scroll;
     color: black;
     background-color: white;
     border-radius: 10px;
