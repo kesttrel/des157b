@@ -1,6 +1,7 @@
 
 Parse.initialize('fz7b9Y6ui2JdvGpf6YT3w4sC7kxRH34QDbsHYLcD', 'KKiTuov8NXlbuJ7pLQqM4dLexabodZZGOjVZ76Jc');
 Parse.serverURL = 'https://parseapi.back4app.com/';
+AOS.init();
 
 (function(){
     'use strict';
@@ -25,8 +26,11 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 
                 const theListItem = document.createElement('li');
                 theListItem.setAttribute('id', `r-${id}`);
+                theListItem.setAttribute('data-aos', 'fade-up');
+                theListItem.setAttribute('data-aos-duration', '1500');
+                // data-aos-duration="1500"
                 theListItem.innerHTML =
-                `<h2 class="title">${title}</h1>
+                `<h2 class="title">${title}</h2>
                 <p class="response">${response}</p>
                 <p class="signature">-${signature}</p>`;
                 postList.append(theListItem);
