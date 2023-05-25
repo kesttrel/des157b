@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #d9dbe2;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+main {
+    padding:  0 25px;
+}
+ol {
+    list-style: none;
+    padding: 0;
+}
+header {
+    height: 150px;
+    width: 100vw;
+    background-color: white;
+    margin-bottom: 20px;
+}
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: black;
+}
+#newbtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    filter: drop-shadow(3px 3px 3px #d9dbe2);
+    padding: 10px 15px;
+    border-radius: 9px;
+}
+
+#newbtn:hover {
+    cursor: pointer;
+}
+
+ol {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+li {
+    overflow: scroll;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    filter: drop-shadow(3px 3px 6px #d0d0d7);
+    padding: 15px;
+    height: 300px;
+}
+
+#create-post {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    filter: drop-shadow(-3px 3px 6px #d9dbe2);
+    color: black;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 50;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#create-post h2,
+#title-input,
+#response-input,
+#signature-input {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+.fa-times-circle {
+    display: block;
+    margin-left: auto;
+    font-size: 24px;
+    color: grey;
+    transition: ease-in-out .25s;
+}
+.fa-times-circle:hover {
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.create-post-offscreen { top: 0; right: -100vw; transition: all 500ms cubic-bezier(0.600, 0.040, 0.980, 0.335); }
+.create-post-onscreen { top: 0; right: 0; transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);}
+
+@media screen and (min-width: 600px) {
+    ol {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #create-post {
+        width: 33.33vw;
+    }
+}
+@media screen and (min-width: 900px) {
+    ol {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 1200px) {
+    ol {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
