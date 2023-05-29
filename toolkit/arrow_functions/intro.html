@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function makeUpperCase(aString) {
+    // const makeUpperCase = function(aString) {
+    //     const makeUpperCase = aString => {
+    //     return aString.toUpperCase();
+    // }
+        // If, as in this case, the function contains only one statement, and the function returns a value, you can also remove the curly braces and the return keyword
+    const makeUpperCase = aString => aString.toUpperCase();
+    console.log(makeUpperCase('here is a string'));
+
+    // If you have more than one parameter you need to put the parenthesis back in so that the code is not ambiguous
+
+    const fullName = (fname, lname) => `${fname} ${lname}`;
+    console.log(makeUpperCase(fullName('Jose', 'Gonzales')));
+
+    // If you have more than one line in the fucntion, or it's not returning a variable, you need to include the parentheses and curly braces so that the function is not ambiguous
+
+    const fullName2 = () => {
+        const fname = 'Maria';
+        const lname = 'Sanchez';
+        return `${fname} ${lname}`;
+    }
+    
+    // Arrow functions aren’t great in every case, but they can make your code easier to read in some cases. One really good place to use them is when you have a function or method that takes another function as a parameter.
+
+    const fruit = ['banana', 'apple', 'lemon', 'kiwi'];
+    const upperFruit = [];
+
+    // fruit.forEach( function(thisFruit){
+    //     upperFruit.push(thisFruit.toUpperCase());
+    // });
+    fruit.forEach( thisFruit => {
+        upperFruit.push(thisFruit.toUpperCase());
+    });
+    console.log(upperFruit);
+
+    // Constructor Function - uses new keyword
+    const employee = ( fname, lname, jobTitle ) => {
+        this.fname = fname;
+        this.lname = lname;
+        this.position = jobTitle;
+        this.fullName = () => `${fname} ${lname}`;
+    }
+
+    const id1234 = new employee('Bob', 'Smith', 'Mechanic');
+
+    console.log( id1234.fname );
+    console.log( id1234.fullName() );
+
+</script>
+</html>
