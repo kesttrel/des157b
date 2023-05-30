@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Events</title>
+    <style>
+        body{
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:white;
+        }
+        main {
+            box-sizing: border-box;
+            padding: 100px 20px;
+            width: 100%;
+            min-height: calc(100vh - 80px);
+            background-color: hotpink;
+            text-align: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcyan;
+            margin: 15px auto;
+            line-height: 100px;
+            text-align: center;
+            color:darkgray;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        touch the things
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </main>
+
+    <script>
+
+        const boxes = document.querySelectorAll('.box');
+
+        for(let i=0; i<boxes.length; i++){
+            boxes[i].addEventListener('touchstart', function(event){
+
+                alert(`You touched box #${event.target.innerHTML}`);
+
+            })
+        }
+
+    </script>
+</body>
+</html>

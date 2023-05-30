@@ -28,11 +28,16 @@ AOS.init();
                 theListItem.setAttribute('id', `r-${id}`);
                 theListItem.setAttribute('data-aos', 'fade-up');
                 theListItem.setAttribute('data-aos-duration', '1500');
-                // data-aos-duration="1500"
                 theListItem.innerHTML =
-                `<h2 class="title">${title}</h2>
-                <p class="response">${response}</p>
-                <p class="signature">-${signature}</p>`;
+                `<div class="li-wrapper">
+                    <div></div>
+                    <h3 class="title">${title}</h2>
+                    <p class="signature">-${signature}</p>
+                    <div class="viewBtn">view post</div>
+                </div>`;
+                // `<h2 class="title">${title}</h2>
+                // <p class="response">${response}</p>
+                // <p class="signature">-${signature}</p>`;
                 postList.append(theListItem);
             });
         } catch(error) {
