@@ -11,7 +11,7 @@ AOS.init();
     const createPostForm = document.getElementById('create-post');
     const inputs = document.querySelectorAll('#create-post input:not([type=submit])');
     const viewPostOverlay = document.getElementById('view-post');
-    const navMenu = document.getElementsByTagName('nav');
+    const navMenu = document.querySelector('nav');
 
     async function displayPosts() {
         const posts = Parse.Object.extend('Posts');
@@ -118,11 +118,16 @@ AOS.init();
     document.addEventListener('click', function (event) {
         if (event.target.matches('.fa-times-circle')) {
             createPostForm.className = 'create-post-offscreen';
-            viewPostOverlay.className = "hidden";
+            viewPostOverlay.className = 'hidden';
+            navMenu.className = 'nav-offscreen';
         }
         if (event.target.matches('.viewbtn')) {
             console.log('view button clicked');
-            viewPostOverlay.className = "showing";
+            viewPostOverlay.className = 'showing';
+        }
+        if (event.target.matches('.fa-bars')) {
+            console.log('hamburger icon clicked');
+            navMenu.className = 'nav-onscreen';
         }
     });
 
