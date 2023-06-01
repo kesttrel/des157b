@@ -13,8 +13,6 @@ AOS.init();
     const viewPostOverlay = document.getElementById('view-post');
     const navMenu = document.querySelector('nav');
 
-    alert("Hello, welcome to usability testing for the Virtual Compassion Bench. SCENARIO: Imagine you are a member of the Davis Community and you are at the seal in Downtown. You've just scanned the QR code to check out the digital projects corresponding to the seal with a coffee from Mishka's. You've just taken your first sip of your drink and opened the Compassion Bench project link. Try to perform the following tasks: 1) VIEW A POST AND EXIT A POST. 2) CREATE A POST. 3) OPEN AND CLOSE THE NAVIGATION. ");
-
     async function displayPosts() {
         const posts = Parse.Object.extend('Posts');
         const query = new Parse.Query(posts);
