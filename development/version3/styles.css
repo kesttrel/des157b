@@ -335,6 +335,7 @@ input[type="submit"]:hover {
     .menu li { margin-top: 40px; }
     .menu li a { padding: 10px; color: white; }
     .open-menu , .close-menu { display: block; }
+    .close-menu { color: white; }
     #check:checked ~ .menu { right:0; }
 }
 
