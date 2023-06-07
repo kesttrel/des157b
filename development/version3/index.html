@@ -24,8 +24,36 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="darkMode">
+<body>
     <header>
+        <nav>
+            <ul class="nav-bar">
+                <li class="logo"><a href="#"><img src="images/tree.png" alt="logo"></a></li>
+                <input type="checkbox" id="check">
+                <span class="menu">
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Memorial</a></li>
+                    <li><a href="#">About</a></li>
+                    <label for="check" class="close-menu"><i class="fa fa-times"></i></label>
+                </span>
+                <button id="newbtn">
+                    <svg id="Heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 16.25" height="20">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #E22626;
+                                }
+                            </style>
+                        </defs>
+                        <path class="cls-1" d="m13.56,15.59c-.04.13-.18.2-.31.14-3.67-1.59-7.19-3.59-10.18-6.24-1.08-.96-2.14-2.08-2.48-3.48-.3-1.25-.31-2.54.35-3.65C1.56,1.32,2.26.61,4.09.31c.89-.15,2.4.46,3.11,1.02,1.19.92,1.45,2.13,1.98,3.53.02.06.1.04.09-.02-.09-1.05.26-2.14.98-2.9.85-.9,2.2-1.31,3.39-.99,1.15.32,2.06,1.28,2.51,2.39s.47,2.35.26,3.53c-.2,1.18-.62,2.31-1.04,3.43-.66,1.79-1.33,3.58-1.82,5.28Z" />
+                    </svg>
+                    create a post
+                </button>
+                <label for="check" class="open-menu"><i class="fa fa-bars"></i></label>
+            </ul>
+        </nav>
+    </header>
+    <!-- <header>
         <img src="images/logoLightMode.svg" alt="Logo" class="logo">
         <div id="header-wrapper">
             <div id="newbtn">
@@ -52,7 +80,7 @@
                 <li class="nav-item">About</li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     <main>
         <div class="hero-wrapper">
             <img src="images/welcome.svg" class="hero-img">
@@ -77,26 +105,6 @@
     <footer>
     </footer>
 
-    <!-- <div id="view-post" class="hidden">  -->
-        <!-- <i class="fas fa-times-circle fa-2x"></i>
-        <div id="view-post-content">
-            <div class="post-img"></div>
-            <h3>Post Title</h3>                
-            <p class="signature">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eligendi minima quos unde. Quibusdam dolores quas asperiores ullam facere minima fugit voluptatem quos ut. Deserunt, expedita adipisci in consectetur modi exercitationem fugiat odit. Sequi eius voluptas eligendi sapiente quae modi at iusto dolores minus, tempora fugit labore recusandae voluptate magnam, aliquam adipisci tempore ipsum. Provident et vel facere dolorem, dolore eum, cum quo at, obcaecati esse fugiat veniam? Tempora ipsum in accusamus vero sit fuga sapiente? Nihil eum facilis illum praesentium aspernatur aut laborum obcaecati nulla doloribus? Veniam repudiandae atque alias nam? Quos deserunt itaque architecto obcaecati incidunt quidem at, libero doloribus, laborum explicabo tempore eum commodi magnam molestiae, officiis mollitia vel eligendi quod repudiandae? Incidunt omnis vero ducimus consequuntur ut explicabo error libero maxime ipsa nesciunt eum doloribus, debitis laboriosam ex adipisci eveniet veritatis voluptatibus vel dignissimos, reprehenderit modi accusantium alias. Voluptatem at earum ad dolorum sequi nemo alias.</p>
-            <p>-signature</p>
-        </div>
-        <div id="view-post-nav">
-            <div>
-                <i class="fa fa-caret-left fa-2x"></i>
-                previous post
-            </div>
-            <div>
-                next post
-                <i class="fa fa-caret-right fa-2x"></i>
-            </div>
-        </div> -->
-    <!-- </div> -->
-
     <form id="create-post" class="create-post-offscreen">
         <i class="fas fa-times-circle fa-2x"></i>
         <h3>What does compassion mean to you?</h3>
@@ -115,7 +123,7 @@
             </p>
             <p class="create-post-input-field">
                 <label for="signature">Signature</label>
-            <input type="text" id="signature" name="signature">
+                <input type="text" id="signature" name="signature">
                 <!-- <label for="keywords">Name:</label>
                 <input type="text" id="name"> -->
             </p>
