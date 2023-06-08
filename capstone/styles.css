@@ -199,7 +199,7 @@ li.community-post-list {
 }
 
 #overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     background-color: hsla(0, 0%, 0%, 0.8);
@@ -216,7 +216,6 @@ li.community-post-list {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    max-width: 480px;
     background-color: white;
     z-index: 10;
     padding: 0 10px 6%;
@@ -224,19 +223,11 @@ li.community-post-list {
     border-bottom-left-radius: 10px; 
 }
 
-#create-post-p1 {
-    z-index: 30;
-}
-
-#create-post-p2 {
-    z-index: 20;
-}
-
 #create-post-input-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 5px;
     padding-bottom: 6%;
 }
 
@@ -252,7 +243,7 @@ li.community-post-list {
 
 #response {
     max-width: 440px;
-    min-height: 100px;
+    min-height: 75px;
 }
 #selImg {
     display: grid;
@@ -300,14 +291,16 @@ input[type="submit"]:hover {
     border-radius: 50%;
 }
 .images {
+    width: 220px;
+    height: 220px;
     position: absolute;
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%); 
 }
 #circle {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 }
 
 .create-post-offscreen { top: 0; right: -100vw; transition: all 500ms cubic-bezier(.52,.001,.52,.001); }
@@ -344,7 +337,7 @@ input[type="submit"]:hover {
 
 @media screen and (min-width: 821px) {
     .hero-wrapper {
-        height: calc(100vh - 80px);
+        height: calc(100vh - 60px);
     }
     .hero-img {
         position: relative;
@@ -392,9 +385,16 @@ input[type="submit"]:hover {
         margin: auto;
     }
     .hero-text p {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    #create-post {
+        max-width: 40%;
     }
     li.community-post-list {
         width: 100%;
+    }
+    .scroll-wrapper {
+        position: relative;
+        bottom: 30px;
     }
 }
