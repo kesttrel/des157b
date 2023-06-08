@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capstone</title>
+    <title>Community</title>
     <!--/ /-------- Normalize CSS --------/ /-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <!--/ /-------- Font Awesome --------/ /-->
@@ -24,130 +24,127 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="darkMode">
+<body>
     <header>
-        <img src="images/logoLightMode.svg" alt="Logo" class="logo">
-        <div id="header-wrapper">
-            <div id="newbtn">
-                <svg id="Heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 16.25" height="20">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #E22626;
-                            }
-                        </style>
-                    </defs>
-                    <path class="cls-1" d="m13.56,15.59c-.04.13-.18.2-.31.14-3.67-1.59-7.19-3.59-10.18-6.24-1.08-.96-2.14-2.08-2.48-3.48-.3-1.25-.31-2.54.35-3.65C1.56,1.32,2.26.61,4.09.31c.89-.15,2.4.46,3.11,1.02,1.19.92,1.45,2.13,1.98,3.53.02.06.1.04.09-.02-.09-1.05.26-2.14.98-2.9.85-.9,2.2-1.31,3.39-.99,1.15.32,2.06,1.28,2.51,2.39s.47,2.35.26,3.53c-.2,1.18-.62,2.31-1.04,3.43-.66,1.79-1.33,3.58-1.82,5.28Z" />
-                </svg>
-                create a post
-            </div>
-            <i class="fa fa-bars fa-2x"></i>
-        </div>
-        <nav class="nav-offscreen">
-            <i class="fas fa-times-circle fa-2x"></i>
-            <ul>
-                <h1 style="color:red">NAV MENU UNDER CONSTRUCTION</h1>
-                <li class="nav-item">Community</li>
-                <li class="nav-item">Memorial</li>
-                <li class="nav-item">About</li>
+        <nav>
+            <ul class="nav-bar">
+                <li class="logo"><a href="#"><img src="images/logo.svg" alt="logo"></a></li>
+                <input type="checkbox" id="check">
+                <span class="menu">
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Memorial</a></li>
+                    <li><a href="#">About</a></li>
+                    <label for="check" class="close-menu"><i class="fa fa-times"></i></label>
+                </span>
+                <button id="newbtn">
+                    <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 16.25" height="20">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #E22626;
+                                }
+                            </style>
+                        </defs>
+                        <path class="cls-1" d="m13.56,15.59c-.04.13-.18.2-.31.14-3.67-1.59-7.19-3.59-10.18-6.24-1.08-.96-2.14-2.08-2.48-3.48-.3-1.25-.31-2.54.35-3.65C1.56,1.32,2.26.61,4.09.31c.89-.15,2.4.46,3.11,1.02,1.19.92,1.45,2.13,1.98,3.53.02.06.1.04.09-.02-.09-1.05.26-2.14.98-2.9.85-.9,2.2-1.31,3.39-.99,1.15.32,2.06,1.28,2.51,2.39s.47,2.35.26,3.53c-.2,1.18-.62,2.31-1.04,3.43-.66,1.79-1.33,3.58-1.82,5.28Z" />
+                    </svg>
+                    create a post
+                </button>
+                <label for="check" class="open-menu"><i class="fa fa-bars"></i></label>
             </ul>
         </nav>
     </header>
     <main>
         <div class="hero-wrapper">
             <img src="images/welcome.svg" class="hero-img">
-            <div class="hero-text">
-                <!-- <h1>Welcome to the virtual Davis Compassion Bench</h1> -->
-                <!-- <p>This space exists to extend the work of Davis community member David Breaux, also known as ‘The Compassion Guy’. To learn more about David’s word please visit David's Memorial page.</p> -->
-                <p>Please take a few moments to reflect on your life and the concept of compassion. What does compassion mean to you?
-                </p>
-                <p>When you have finished, please share your thoughts by creating a post.</p>
+            <div id="assets-and-text">
+                <div class="left">
+                    <img src="images/poppies.png" alt="poppies" id="poppies-asset">
+                    <img src="images/hand.png" alt="hand" id="hand-asset">
+                    <img src="images/peace.png" alt="peace" id="peace-asset">
+                </div>
+                <div class="hero-text">
+                    <!-- <h1>Welcome to the virtual Davis Compassion Bench</h1> -->
+                    <!-- <p>This space exists to extend the work of Davis community member David Breaux, also known as ‘The Compassion Guy’. To learn more about David’s word please visit David's Memorial page.</p> -->
+                    <p>Please take a few moments to reflect the concept of compassion and how compassion takes shape in your life. What does compassion mean to you?
+                    </p>
+                    <p>When you have finished, please share your thoughts by <em>creating a post</em>.</p>
+                </div>
+                <div class="right">
+                    <img src="images/sunflower.png" alt="sunflower" id="sunflower-asset">
+                    <img src="images/star.png" alt="star" id="star-asset">
+                    <img src="images/tree.png" alt="tree" id="tree-asset">
+                </div>
             </div>
+
             <div class="scroll-wrapper">
                 <div>scroll</div>
-                <i class="fa fa-arrow-down fa-1x"></i>
+                <i class="fa fa-arrow-down fa-2x"></i>
             </div>
 
         </div>
         <h2>Community Posts</h2>
         <ol class="community-post-list">
         </ol>
+
+        <div id="overlay" class="hidden"></div>
     </main>
 
     <footer>
+        <h4>&copy; Designed and developed by Kestrel Hewson 2023</h4>
     </footer>
 
-    <!-- <div id="view-post" class="hidden">  -->
-        <!-- <i class="fas fa-times-circle fa-2x"></i>
-        <div id="view-post-content">
-            <div class="post-img"></div>
-            <h3>Post Title</h3>                
-            <p class="signature">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eligendi minima quos unde. Quibusdam dolores quas asperiores ullam facere minima fugit voluptatem quos ut. Deserunt, expedita adipisci in consectetur modi exercitationem fugiat odit. Sequi eius voluptas eligendi sapiente quae modi at iusto dolores minus, tempora fugit labore recusandae voluptate magnam, aliquam adipisci tempore ipsum. Provident et vel facere dolorem, dolore eum, cum quo at, obcaecati esse fugiat veniam? Tempora ipsum in accusamus vero sit fuga sapiente? Nihil eum facilis illum praesentium aspernatur aut laborum obcaecati nulla doloribus? Veniam repudiandae atque alias nam? Quos deserunt itaque architecto obcaecati incidunt quidem at, libero doloribus, laborum explicabo tempore eum commodi magnam molestiae, officiis mollitia vel eligendi quod repudiandae? Incidunt omnis vero ducimus consequuntur ut explicabo error libero maxime ipsa nesciunt eum doloribus, debitis laboriosam ex adipisci eveniet veritatis voluptatibus vel dignissimos, reprehenderit modi accusantium alias. Voluptatem at earum ad dolorum sequi nemo alias.</p>
-            <p>-signature</p>
-        </div>
-        <div id="view-post-nav">
-            <div>
-                <i class="fa fa-caret-left fa-2x"></i>
-                previous post
-            </div>
-            <div>
-                next post
-                <i class="fa fa-caret-right fa-2x"></i>
-            </div>
-        </div> -->
-    <!-- </div> -->
-
     <form id="create-post" class="create-post-offscreen">
-        <i class="fas fa-times-circle fa-2x"></i>
+        <i class="fas fa-times close-form"></i>
         <h3>What does compassion mean to you?</h3>
         <div id="create-post-input-wrapper">
             <p class="create-post-input-field">
-                <label for="title">Title</label>
+                <label for="title">Keywords *</label>
                 <input type="text" id="title" name="title">
-                <!-- <label for="keywords">Keyword(s):</label>
-                <input type="text" id="keywords"> -->
             </p>
             <p class="create-post-input-field">
-                <label for="response">Response</label>
+                <label for="response">Response *</label>
                 <input type="text" id="response" name="response">
-                <!-- <label for="response">Response:</label>
-                <textarea name="response" id="response"></textarea> -->
             </p>
             <p class="create-post-input-field">
-                <label for="signature">Signature</label>
-            <input type="text" id="signature" name="signature">
-                <!-- <label for="keywords">Name:</label>
-                <input type="text" id="name"> -->
+                <label for="signature">Name *</label>
+                <input type="text" id="signature" name="signature">
             </p>
-            <h3>Select an image</h3>
-            <ol id="selImg">
-            </ol>
+            <h3>Select an image *</h3>
+            <div id="selImg">
+                <input class="input-hidden" type="radio" value="sunflower" name="selectedImage" id="sunflower">
+                <label for="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                </label>
+
+                <input class="input-hidden" type="radio" value="tree" name="selectedImage" id="tree">
+                <label for="tree">
+                    <img src="images/tree.png" alt="tree">
+                </label>
+
+                <input class="input-hidden" type="radio" value="hand" name="selectedImage" id="hand">
+                <label for="hand">
+                    <img src="images/hand.png" alt="hand">
+                </label>
+
+                <input class="input-hidden" type="radio" value="peace" name="selectedImage" id="peace">
+                <label for="peace">
+                    <img src="images/peace.png" alt="peace">
+                </label>
+
+                <input class="input-hidden" type="radio" value="poppies" name="selectedImage" id="poppies">
+                <label for="poppies">
+                    <img src="images/poppies.png" alt="poppies">
+                </label>
+
+                <input class="input-hidden" type="radio" value="star" name="selectedImage" id="star">
+                <label for="star">
+                    <img src="images/star.png" alt="star">
+                </label>
+            </div>
+            <p id="alert">* indicates a required field</p>
         </div>
         <input type="submit" value="Upload Post" class="btn">
     </form>
-
-    <!-- <form id="create-post" class="create-post-offscreen">
-        <i class="fas fa-times-circle fa-2x"></i>
-        <h2>Create a Post</h2>
-
-        <div id="title-input">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-        </div>
-
-        <div id="response-input">
-            <label for="response">Response</label>
-            <input type="text" id="response" name="response">
-        </div>
-
-        <div id="signature-input">
-            <label for="signature">Signature</label>
-            <input type="text" id="signature" name="signature">
-        </div>
-
-        <input type="submit" value="Upload Post">
-    </form> -->
-
 </body>
 
 </html>
