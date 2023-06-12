@@ -17,7 +17,7 @@ AOS.init();
         let radioButtons = document.querySelectorAll('input[name="selectedImage"]');
         for (let i = 0; i < radioButtons.length; i++) {
             if (radioButtons[i].checked) {
-                radioButtons[i].value;
+                alert('The selected image is:' +radioButtons[i].value);
             }
         }
     }
@@ -66,7 +66,7 @@ AOS.init();
 
     createPostForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        radioButtonInput();
+        // radioButtonInput();
         createPost();
     });
 
