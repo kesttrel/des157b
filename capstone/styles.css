@@ -20,7 +20,7 @@ body {
 }
 .logo img { height: 40px; } 
 .menu { position: absolute; right: 185px; }
-.menu ul { display: flex; list-style-type: none; }
+.menu ul { list-style-type: none; display: flex; }
 .menu li { padding-left: 30px;}
 .menu li a {
     display: inline-block;
