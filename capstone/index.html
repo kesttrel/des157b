@@ -27,15 +27,17 @@
 <body>
     <header>
         <nav>
-            <ul class="nav-bar">
-                <li class="logo"><a href="#"><img src="images/logo.svg" alt="logo"></a></li>
+            <div class="nav-bar">
+                <div class="logo"><a href="#"><img src="images/logo.svg" alt="logo"></a></div>
                 <input type="checkbox" id="check">
-                <span class="menu">
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Memorial</a></li>
-                    <li><a href="#">About</a></li>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Memorial</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
                     <label for="check" class="close-menu"><i class="fa fa-times"></i></label>
-                </span>
+                </div>
                 <button id="newbtn">
                     <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 16.25" height="20">
                         <defs>
@@ -50,12 +52,12 @@
                     create a post
                 </button>
                 <label for="check" class="open-menu"><i class="fa fa-bars"></i></label>
-            </ul>
+            </div>
         </nav>
     </header>
     <main>
         <div class="hero-wrapper">
-            <img src="images/welcome.svg" class="hero-img">
+            <img src="images/welcome.svg" alt="hero image" class="hero-img">
             <div id="assets-and-text">
                 <div class="left">
                     <img src="images/poppies.png" alt="poppies" id="poppies-asset">

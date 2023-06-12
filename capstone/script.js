@@ -8,19 +8,9 @@ AOS.init();
 
     const newBtn = document.getElementById('newbtn');
     const createPostForm = document.getElementById('create-post');
-    const inputs = document.querySelectorAll('#create-post input:not([type=submit])');
     const postList = document.querySelector('main ol');
     const overlay = document.getElementById('overlay');
     const navMenu = document.querySelector('nav');
-
-    function radioButtonInput() {
-        let radioButtons = document.querySelectorAll('input[name="selectedImage"]');
-        for (let i = 0; i < radioButtons.length; i++) {
-            if (radioButtons[i].checked) {
-                alert('The selected image is:' +radioButtons[i].value);
-            }
-        }
-    }
 
     async function displayPosts() {
         const posts = Parse.Object.extend('Posts');
@@ -66,29 +56,38 @@ AOS.init();
 
     createPostForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        // radioButtonInput();
         createPost();
     });
 
     async function createPost() {
         const newPost = {};
 
-        for (let i = 0; i < inputs.length; i++) {
-            let key = inputs[i].getAttribute('name');
-            let value = inputs[i].value;
-            newPost[key] = value;
+        // for (let i = 0; i < inputs.length; i++) {
+        //     let key = inputs[i].getAttribute('name');
+        //     let value = inputs[i].value;
+        //     newPost[key] = value;
+        // }
+
+        // Gets the radio button value
+        let radioButtons = document.querySelectorAll('input[name="selectedImage"]');
+        let selectedImage;
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                selectedImage = radioButtons[i].value;
+            }
         }
+
+        // Evaluates if the form can be submitted or not
         if (newPost.title != '' && newPost.response != '' && newPost.signature != '' && newPost.selectedImage != '') {
-            // alert('added');
             const newPostData = new Parse.Object('Posts');
-            newPostData.set('title', newPost.title);
-            newPostData.set('response', newPost.response);
-            newPostData.set('signature', newPost.signature);
-            newPostData.set('selectedImage', newPost.selectedImage);
+            newPostData.set('title', document.getElementById('title').value);
+            newPostData.set('response', document.getElementById('response').value);
+            newPostData.set('signature', document.getElementById('signature').value);
+            newPostData.set('selectedImage', selectedImage);
             try {
                 // add to B4A
                 const result = await newPostData.save();
-                console.log('post created', result);
+                // console.log('post created', result);
                 resetFormFields();
                 // update the DOM 
                 postList.innerHTML = '';
@@ -104,7 +103,6 @@ AOS.init();
             alert.innerHTML = '';
             alert.innerHTML = 'Oh no! One or more fields are empty.';
             alert.style.color = 'red';
-            // alert('one or more fields left empty');
         }
     }
 
