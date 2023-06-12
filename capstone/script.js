@@ -8,20 +8,19 @@ AOS.init();
 
     const newBtn = document.getElementById('newbtn');
     const createPostForm = document.getElementById('create-post');
-    let inputs = document.querySelectorAll('#create-post input:not([type=submit])');
+    const inputs = document.querySelectorAll('#create-post input:not([type=submit])');
     const postList = document.querySelector('main ol');
     const overlay = document.getElementById('overlay');
     const navMenu = document.querySelector('nav');
 
-    // const listItems = document.querySelectorAll('input[type=radio]');
-    // console.log(listItems)
-
-    // for ( let i = 0; i<listItems.length; i++ ) {
-    //     listItems[i].addEventListener('click', () => {
-    //         document.querySelector('.selected')?.classList.remove('selected');
-    //         listItems[i].classList.add('selected');
-    //     });
-    // }
+    function radioButtonInput() {
+        let radioButtons = document.querySelectorAll('input[name="selectedImage"]');
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                radioButtons[i].value;
+            }
+        }
+    }
 
     async function displayPosts() {
         const posts = Parse.Object.extend('Posts');
@@ -67,6 +66,7 @@ AOS.init();
 
     createPostForm.addEventListener('submit', function (event) {
         event.preventDefault();
+        radioButtonInput();
         createPost();
     });
 
