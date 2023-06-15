@@ -402,7 +402,7 @@ input[type="submit"]:hover {
 .about-hero-image img {
     width: 100%;
 }
-.compassion-bench, .centennial-seal, .davids-work {
+#compassion-bench, #centennial-seal, #davids-work {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -548,13 +548,14 @@ input[type="submit"]:hover {
         height: calc(50vw - 30px);
         width: calc(50vw - 30px);
     }
-    .compassion-bench, .centennial-seal, .davids-work {
+    #compassion-bench, #centennial-seal, #davids-work {
         flex-direction: row;
         gap: 30px;
         height: calc(100vh - 60px);
     }
     .about-images img {
-        width: calc(50vw - 30px);
+        width: 50vw;
+        height: auto;
     }
     .about-images {
         display: flex;
@@ -562,10 +563,6 @@ input[type="submit"]:hover {
         justify-content: center;
         align-items: center;
         width: 50vw;
-    }
-    .centennial-seal .about-images img {
-        height: 40vh;
-        width: auto;
     }
     .about-text {
         display: flex;
