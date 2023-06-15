@@ -412,8 +412,17 @@ input[type="submit"]:hover {
 .about-images img {
     width: calc(100vw - 30px);
 }
-/* .davids-work {}
-.centennial-seal {} */
+/* #map { 
+    width: 300px;
+    height: 300px;
+}
+.leaflet-popup-content-wrapper p {
+    margin: 0;
+    margin-top: 10px;
+}
+.leaflet-popup-content-wrapper {
+    width: 192px;
+} */
 
 @media screen and (max-width:
 700px) {
