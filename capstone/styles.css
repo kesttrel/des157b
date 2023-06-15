@@ -8,20 +8,49 @@ body {
     color: #231f20;
     font-family: 'Lato', sans-serif;
 }
-.nav-bar {
-    width: 100%;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    /* list-style-type: none; */
-    position: relative;
-    color: #231f20;
-    padding: 12px 20px;
+ol, ul {
+    list-style-type: none;
 }
-.logo img { height: 40px; } 
-.menu { position: absolute; right: 185px; }
-.menu ul { list-style-type: none; display: flex; }
-.menu li { padding-left: 30px;}
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+    height: 60px;
+}
+.scrolled {
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.084));
+}
+.nav-bar {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    color: #231f20;
+    margin: 0;
+    padding: 12px 15px;
+}
+.logo img { 
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    height: 40px;
+    z-index: 100;
+}
+.menu { 
+    display: flex;
+    gap: 30px;
+} 
+.menu ul { 
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px; }
 .menu li a {
     display: inline-block;
     text-decoration: none;
@@ -49,21 +78,12 @@ body {
     font-size: 1.5rem;
     display: none;
 }
-.open-menu {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
 .close-menu {
     top: 20px;
     right: 20px;
 }
 #check { display: none; }
 
-#newbtn {
-    position: absolute;
-    right: 20px;
-}
 /* Typography*/
 p {
     font-size: 16px;
@@ -78,24 +98,29 @@ h4 {
 h3 { 
     font-size: 20px; 
     font-weight: 400; 
-    text-align: center; 
+    /* text-align: center;  */
 }
 h2 { 
     font-size: 26px; 
     font-weight: 700; 
     text-align: center; 
-    padding: 25px 0;
+    padding: 50px 0;
 }
 h1 { 
     font-size: 32px; 
     font-weight: 700;  
     padding: 10px 0;
+    margin: 0;
 }
 main {
     padding:  0 15px;
     z-index: -10;
 }
 footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     display: grid;
     place-content: center;
     margin-top: 50px;
@@ -110,6 +135,7 @@ footer h4 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 100vw;
 }
 #assets-and-text {
     display: flex;
@@ -125,8 +151,6 @@ footer h4 {
 .hero-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    max-width: 50vw;
     padding: 0 10px;
 }
 .right {
@@ -164,6 +188,22 @@ image {
     background-color: #4C5CF0;
     color: white;
 }
+#newMemorialBtn {
+    width: fit-content;
+    display: flex;
+    gap: 5px;
+    color: white;
+    background-color: #4C5CF0;
+    padding: 10px 15px;
+    border-radius: 22px;
+    cursor: pointer;
+    border: none;
+    transition: .5s ease-in-out;
+}
+#newMemorialBtn:hover {
+    color: #231f20;
+    background-color: #FECD1E;
+}
 .fa-times:hover {
     color: #4C5CF0;
 }
@@ -176,7 +216,8 @@ image {
     cursor: pointer;
 }
 
-ol.community-post-list {
+ol.community-post-list,
+ol.memorial-post-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 30px;
@@ -184,7 +225,8 @@ ol.community-post-list {
     padding: 0;
 }
 
-li.community-post-list {
+li.community-post-list,
+li.memorial-post-list {
     color: #231f20;
     border-radius: 10px;
     filter: drop-shadow(3px 3px 6px #d0d0d7);
@@ -205,9 +247,13 @@ li.community-post-list {
     background-color: hsla(0, 0%, 0%, 0.8);
     height: 100vh;
     width: 100vw;
+    z-index: 20;
 }
 
-#create-post {
+/* Create post form  */
+
+#create-post,
+#create-memorial-post {
     position: fixed;
     overflow: scroll;
     display: flex;
@@ -217,7 +263,7 @@ li.community-post-list {
     height: 100vh;
     width: 100vw;
     background-color: white;
-    z-index: 10;
+    z-index: 20;
     padding: 0 10px 6%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px; 
@@ -310,8 +356,71 @@ input[type="submit"]:hover {
     display: none;
 }
 
+/* Memorial page  */
+#memorial-hero-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+#ultramarine-bg {
+    position: relative;
+    height: calc(100vw - 30px);
+    width: calc(100vw - 30px);
+    background-color: #4C5CF0;
+    margin-top: 28%;
+}
+#memorial-hero-img {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    max-height: 110vw;
+}
+#sunflower-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+#sunflower-grid  img {
+    width: 100%
+}
+
+/* about page  */
+.about-hero-wrapper {
+    height: max-content;
+}
+.about-hero-image {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    width: calc(100vw - 30px);
+    background-color: black;
+}
+.about-hero-image img {
+    width: 100%;
+}
+.compassion-bench, .centennial-seal, .davids-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    /* height: 100%; */
+}
+.about-images img {
+    width: calc(100vw - 30px);
+}
+/* .davids-work {}
+.centennial-seal {} */
+
 @media screen and (max-width:
-610px) {
+700px) {
+    /* #newbtn {
+    position: absolute;
+    right: 20px;
+} */
     .menu {
         flex-direction: column;
         align-items: center;
@@ -325,7 +434,8 @@ input[type="submit"]:hover {
         background-color: #231f20;
         transition: all 0.2s;
     }
-    #newbtn {
+    #newbtn,
+    #newMemorialBtn {
         margin-right: 40px;
     }
     .menu ul { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
@@ -336,16 +446,12 @@ input[type="submit"]:hover {
     #check:checked ~ .menu { right:0; }
 }
 
-@media screen and (min-width: 821px) {
+@media screen and (min-width: 900px) {
     .hero-wrapper {
         height: calc(100vh - 60px);
     }
-    .hero-img {
-        position: relative;
-        top: 0;
-        left: 20px;
+    .hero-img img {
         width: 60%; 
-        z-index: -10;
     }
     #poppies-asset,
     #sunflower-asset,
@@ -355,19 +461,19 @@ input[type="submit"]:hover {
     #tree-asset {
         position: absolute;
         max-width: 15%;
-        z-index: -5;
+        z-index: 0;
     }
     #poppies-asset {
         bottom: 20%;
         left: 20%;
     }
     #sunflower-asset {
-        bottom: 20px;
-        left: 20px;
+        bottom: 15px;
+        left: 15px;
     }
     #hand-asset {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
     }
     #star-asset {
         bottom: 20%;
@@ -375,7 +481,7 @@ input[type="submit"]:hover {
     }
     #peace-asset {
         bottom: 40%;
-        right: 2%;
+        right: 15px;
     }
     #tree-asset {
         bottom: 60%;
@@ -388,14 +494,88 @@ input[type="submit"]:hover {
     .hero-text p {
         font-size: 18px;
     }
-    #create-post {
+    #create-post,
+    #create-memorial-post {
         max-width: 40%;
     }
     li.community-post-list {
         width: 100%;
     }
-    .scroll-wrapper {
+    /* .scroll-wrapper {
         position: relative;
         bottom: 30px;
+    } */
+    /* Memorial  */
+    #memorial-hero-wrapper {
+        flex-direction: row;
+        gap: 6vw;
+        height: max-content;
+    }
+    #memorial-hero-img {
+        position: absolute;
+        bottom: 0;
+        right: -50px;
+        height: calc(50vw - 30px);
+    }
+    #memorial-text {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
+        height: calc(50vw - 30px);
+        width: calc(50vw - 30px);
+    }
+    #ultramarine-bg {
+        margin-top: 50px;
+        height: calc(50vw - 60px);
+        width: calc(50vw - 60px);
+    }
+
+    /* about page  */
+    .about-hero-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        height: calc(100vh - 60px);
+    }
+    .about-hero-image {
+        width: calc(50vw - 15px);
+        height: calc(50vw - 15px);
+    }
+    .about-hero-text {
+        display: flex;
+        flex-direction: column;
+        height: calc(50vw - 30px);
+        width: calc(50vw - 30px);
+    }
+    .compassion-bench, .centennial-seal, .davids-work {
+        flex-direction: row;
+        gap: 30px;
+        height: calc(100vh - 60px);
+    }
+    .about-images img {
+        width: calc(50vw - 30px);
+    }
+    .about-images {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+    }
+    .centennial-seal .about-images img {
+        height: 40vh;
+        width: auto;
+    }
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+    }
+}
+@media screen and (min-width: 1100px) {
+    #memorial-text, .about-hero-text {
+        justify-content: flex-end;
     }
 }

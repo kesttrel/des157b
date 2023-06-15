@@ -1,4 +1,3 @@
-
 Parse.initialize('jZbgGvTqompDKrt8ffrLnnZD7yY4DIhkcJEiAw5W', 'LINDPSjtUUuLwQits4ZHAlOdyftsoP8oKvgyjBVp');
 Parse.serverURL = 'https://parseapi.back4app.com/';
 AOS.init();
@@ -6,13 +5,29 @@ AOS.init();
 (function () {
     'use strict';
 
-    const newBtn = document.getElementById('newbtn');
     const createPostForm = document.getElementById('create-post');
-    const postList = document.querySelector('main ol');
+    const communityPostList = document.querySelector('.community-post-list');
     const overlay = document.getElementById('overlay');
     const navMenu = document.querySelector('nav');
 
-    async function displayPosts() {
+    const header = document.querySelector('header');
+    const communityLogoImg = document.querySelector('#community-logo');
+    const main = document.querySelector('main');
+
+    window.addEventListener('scroll', () => {
+        let scrollPosition = window.scrollY;
+
+        if (scrollPosition >= main.offsetTop) {
+            header.classList.add('scrolled');
+            communityLogoImg.classList.remove('hidden');
+
+        } else {
+            header.classList.remove('scrolled');
+            communityLogoImg.classList.add('hidden');
+        }
+    });
+
+    async function displayCommunityPosts() {
         const posts = Parse.Object.extend('Posts');
         const query = new Parse.Query(posts);
         try {
@@ -41,36 +56,25 @@ AOS.init();
                     <p class="response">${response}</p>
                     <h4>-${signature}</h4>
                 </div>`;
-                postList.append(theListItem);
+                communityPostList.append(theListItem);
             });
         } catch (error) {
             console.error('error while fetching posts', error);
         }
     }
-    displayPosts();
-
-    newBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        createPostForm.className = 'create-post-onscreen';
-    });
+    displayCommunityPosts();
 
     createPostForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        createPost();
+        createCommunityPost();
     });
 
-    async function createPost() {
+    async function createCommunityPost() {
         const newPost = {};
 
-        // for (let i = 0; i < inputs.length; i++) {
-        //     let key = inputs[i].getAttribute('name');
-        //     let value = inputs[i].value;
-        //     newPost[key] = value;
-        // }
-
-        // Gets the radio button value
         let radioButtons = document.querySelectorAll('input[name="selectedImage"]');
         let selectedImage;
+        // loops through image selection and gets selected value 
         for (let i = 0; i < radioButtons.length; i++) {
             if (radioButtons[i].checked) {
                 selectedImage = radioButtons[i].value;
@@ -90,8 +94,8 @@ AOS.init();
                 // console.log('post created', result);
                 resetFormFields();
                 // update the DOM 
-                postList.innerHTML = '';
-                displayPosts();
+                communityPostList.innerHTML = '';
+                displayCommunityPosts();
                 // Close the form 
                 overlay.classList.add('hidden');
                 createPostForm.className = 'create-post-offscreen';
@@ -106,6 +110,7 @@ AOS.init();
         }
     }
 
+
     // Event Delegation 
     document.addEventListener('click', function (event) {
         if (event.target.matches('.fa-times')) {
@@ -115,11 +120,11 @@ AOS.init();
         }
         if (event.target.matches('.fa-bars')) {
             console.log('hamburger icon clicked');
-            overlay.classList.remove('hidden');
             navMenu.className = 'nav-onscreen';
         }
         if (event.target.matches('#newbtn')) {
             overlay.classList.remove('hidden');
+            createPostForm.className = 'create-post-onscreen';
         }
     });
 

@@ -21,14 +21,14 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!--/ /-------- JavaScript --------/ /-->
-    <script src="script.js" defer></script>
+    <script src="memorialScript.js" defer></script>
 </head>
 
-<body>
+<body id="memorial">
     <header>
         <nav>
             <div class="nav-bar">
-                <div class="logo"><a href="index.html"><img src="images/welcome.svg" alt="logo" class="hidden"  id="community-logo"></a></div>
+                <div class="logo"><a href="#"><img src="images/welcome.svg" alt="logo"></a></div>
                 <input type="checkbox" id="check">
                 <div class="menu">
                     <ul>
@@ -38,7 +38,7 @@
                     </ul>
                     <label for="check" class="close-menu"><i class="fa fa-times"></i></label>
                 </div>
-                <button id="newbtn">
+                <button id="newMemorialBtn">
                     <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.55 16.25" height="20">
                         <defs>
                             <style>
@@ -51,64 +51,60 @@
                     </svg>
                     create a post
                 </button>
-                <label for="check" class="open-menu">
-                    <i class="fa fa-bars"></i>
-                </label>
+                <label for="check" class="open-menu"><i class="fa fa-bars"></i></label>
             </div>
         </nav>
     </header>
     <main>
-        <div class="hero-wrapper">
-            <div class="hero-img" data-aos="fade-right">
-                <img src="images/welcome.svg" alt="Welcome to the compassion bench" id="hero-img">
-            </div>
-            <div id="assets-and-text">
-                <div class="left">
-                    <img src="images/poppies.png" alt="poppies" id="poppies-asset">
-                    <img src="images/hand.png" alt="hand" id="hand-asset">
-                    <img src="images/peace.png" alt="peace" id="peace-asset">
+        <div id="memorial-hero-wrapper">
+            <div id="ultramarine-bg" data-aos="fade-right">
+                <div id="sunflower-grid">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
+                    <img src="images/sunflower.png" alt="sunflower">
                 </div>
-                <div class="hero-text">
-                    <p>Please take a few moments to reflect the concept of compassion and how compassion takes shape in your life. What does compassion mean to you?
-                    </p>
-                    <p>When you have finished, please share your thoughts by <em>creating a post</em>.</p>
-                </div>
-                <div class="right">
-                    <img src="images/sunflower.png" alt="sunflower" id="sunflower-asset" data-aos="fade-right">
-                    <img src="images/star.png" alt="star" id="star-asset" data-aos="fade-left">
-                    <img src="images/tree.png" alt="tree" id="tree-asset" data-aos="fade-left">
+                <img src="images/david-rasterized-svg.png" alt="hero image" id="memorial-hero-img">
+            </div>
+            <div id="memorial-text" data-aos="fade-left">
+                <h1>David Breaux – the 'Compassion Guy'</h1>
+                <h3>1973-2023</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, saepe! Eligendi voluptate facilis repellendus rerum culpa tempore cupiditate tempora? Facilis iste dolore tempore, accusamus atque mollitia velit, fugit placeat asperiores reiciendis amet sapiente, soluta commodi ex corporis quibusdam.</p>
+                <p>Provident nihil fugit at, quas recusandae, enim dolorum autem ratione eveniet porro nesciunt inventore ea voluptatibus velit explicabo commodi neque in consectetur! Esse voluptatum deserunt ab exercitationem labore aspernatur qui, unde minima ratione ut.</p>
+                <p>Est qui dolorem autem omnis culpa magnam sunt nihil deleniti. Tempore soluta omnis sint a quidem error asperiores et fugit tenetur quisquam iusto inventore impedit ea sed, nobis amet voluptas provident odio. Aspernatur vitae a animi at ipsam temporibus. Asperiores aliquam sit vero non enim? Nulla repellendus quas, culpa pariatur.</p>
+                <div class="scroll-wrapper">
+                    <div>scroll</div>
+                    <i class="fa fa-arrow-down fa-2x"></i>
                 </div>
             </div>
-
-            <div class="scroll-wrapper">
-                <div>scroll</div>
-                <i class="fa fa-arrow-down fa-2x"></i>
-            </div>
-
         </div>
-        <h2>Community Posts</h2>
-        <ol class="community-post-list"></ol>
-    </main>
+        <h2>Posts for David</h2>
+        <ol class="memorial-post-list"></ol>
 
-    <footer>
-        <h4>&copy; Designed and developed by Kestrel Hewson 2023</h4>
-    </footer>
+        <div id="overlay" class="hidden"></div>
+    </main>
+    
     <div id="overlay" class="hidden"></div>
-    <form id="create-post" class="create-post-offscreen">
+    <form id="create-memorial-post" class="create-post-offscreen">
         <i class="fas fa-times close-form"></i>
-        <h3>What does compassion mean to you?</h3>
+        <h3>Remembering David</h3>
         <div id="create-post-input-wrapper">
             <p class="create-post-input-field">
-                <label for="title">Keywords *</label>
-                <input type="text" id="title" name="title">
+                <label for="keyword">Keywords *</label>
+                <input type="text" id="keyword" name="keyword">
             </p>
             <p class="create-post-input-field">
                 <label for="response">Response *</label>
                 <input type="text" id="response" name="response">
             </p>
             <p class="create-post-input-field">
-                <label for="signature">Name *</label>
-                <input type="text" id="signature" name="signature">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name">
             </p>
             <label for="selImg">Select an image *</label>
             <div id="selImg">
@@ -146,6 +142,9 @@
         </div>
         <input type="submit" value="Upload Post" class="btn">
     </form>
+    <footer>
+        <h4>&copy; Designed and developed by Kestrel Hewson 2023</h4>
+    </footer>
 </body>
 
 </html>
